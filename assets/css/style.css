@@ -1,13 +1,26 @@
-body {
+html {
   font-size: 16px;
-
   background-image: url("../images/ToyStory-wallpaper.jpg");
+  height: 100%;
+  /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
-  /* width: 100vw; */
-  /* height: 100%; */
 }
 .testBox {
   /* will use this class to test */
-  border: 5px soild red;
+  border: 5px solid red;
+}
+.container {
+  /* layout stuff */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* font stuff */
+  color: orangered;
+}
+h1 {
+  font-family: "Gaegu", cursive;
+}
+.topBox {
+  padding: 1em;
 }
