@@ -9,7 +9,7 @@ html {
 }
 .testBox {
   /* will use this class to test */
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 .container {
   /* layout stuff */
@@ -28,5 +28,7 @@ h1 {
 .topBox {
   padding: 1.5em;
   background-color: #54a4cb;
+  background-color: rgba(84, 164, 203, 80%);
+
   text-align: center;
 }
