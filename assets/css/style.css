@@ -25,10 +25,21 @@ h1 {
   /* color: #e07a5f; */
   font-size: 1.5em;
 }
-.topBox {
+.boxSet {
   padding: 1.5em;
-  background-color: #54a4cb;
   background-color: rgba(84, 164, 203, 80%);
-
   text-align: center;
+  margin: auto;
+}
+.midBox {
+  /* using some more flexbox here */
+  display: flex;
+  flex-direction: column;
+}
+.guessBox {
+  /* width: 100%; */
+  padding: 20px;
+}
+button {
+  padding: 10px;
 }

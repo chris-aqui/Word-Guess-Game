@@ -18,16 +18,23 @@
 <body>
   <!-- <h1>work in progress</h1> -->
   <div class="container">
-    <section class="topBox testBox">
+    <section class="boxSet topBox testBox">
       <h1 class="animated  fadeInLeft">Guess the Word</h1>
       <h3 class="animated  fadeInRight">Toy Story Themed Names</h3>
-      <h2>Press
+      <h2 class="HV1">Press
         <strong class="animated infinite bounceIn fnStart">Enter</strong> to Start</h2>
     </section>
     <!--  -->
-    <section id="gameSpace" class="mid testBox"></section>
+    <section id="gameSpace" class=" boxSet midBox testBox">
+      <input type="text" name="answer box" id="answerF" placeholder="Enter a letter..." class="guessBox">
+      <button type="submit">Guess?</button>
+      <br>
+      <p>Hint:
+        <span class="hint" id="hint"></span>
+      </p>
+    </section>
     <!--  -->
-    <section class="bottom testBox"></section>
+    <section class="boxSet bottomBox "></section>
   </div>
 
 
@@ -35,3 +42,9 @@
 </body>
 
 </html>
+
+<!--
+HV1 - text to hide when enter is pressed to clean up screen
+
+
+ -->
