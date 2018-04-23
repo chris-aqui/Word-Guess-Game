@@ -2,25 +2,31 @@ html {
   font-size: 16px;
   background-image: url("../images/ToyStory-wallpaper.jpg");
   height: 100%;
-  /* background-position: center; */
   background-repeat: no-repeat;
   background-size: cover;
+  /* font-family: "Stylish", sans-serif; */
+  color: 3d405b;
 }
 .testBox {
   /* will use this class to test */
-  border: 5px solid red;
+  border: 2px solid red;
 }
 .container {
   /* layout stuff */
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* font stuff */
-  color: orangered;
 }
 h1 {
-  font-family: "Gaegu", cursive;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 2.8em;
+}
+.fnStart {
+  /* color: #e07a5f; */
+  font-size: 1.5em;
 }
 .topBox {
-  padding: 1em;
+  padding: 1.5em;
+  background-color: #54a4cb;
+  text-align: center;
 }
