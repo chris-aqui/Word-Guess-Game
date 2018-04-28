@@ -21,24 +21,31 @@
     <section class="boxSet topBox testBox">
       <h1 class="animated  fadeInLeft">Guess the Word</h1>
       <h3 class="animated  fadeInRight">Toy Story Themed Names</h3>
-      <h2 class="HV1">Press
-        <strong class="animated infinite bounceIn fnStart">Enter</strong> to Start</h2>
+      <h2 class="HV1">Press any
+        <strong class="animated infinite bounceIn fnStart">Letter</strong> to guess</h2>
     </section>
     <!--  -->
     <section id="gameSpace" class=" boxSet midBox testBox">
-      <input type="text" name="answer box" id="answerF" placeholder="Enter a letter..." class="guessBox">
-      <button type="submit">Guess?</button>
+      <div id="userGues"></div>
       <br>
       <p>Hint:
         <span class="hint" id="hint"></span>
       </p>
     </section>
     <!--  -->
-    <section class="boxSet bottomBox "></section>
+    <section class="boxSet bottomBox stats">
+      <p> Your score is:
+        <span id="score"> 0 </span> ! </p>
+      <p> You have:
+        <span id="lives"> 10 </span> lives left. </p>
+      <p> You have tried:
+        <span id="guess"> ... </span> so far. </p>
+    </section>
   </div>
 
 
   <script src="./assets/javascript/game.js"></script>
+  <!-- <script src="./assets/javascript/game2.js"></script> -->
 </body>
 
 </html>

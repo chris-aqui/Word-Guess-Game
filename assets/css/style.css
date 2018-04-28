@@ -27,7 +27,7 @@ h1 {
 }
 .boxSet {
   padding: 1.5em;
-  background-color: rgba(84, 164, 203, 80%);
+  /* background-color: rgba(84, 164, 203, 80%); */
   text-align: center;
   margin: auto;
 }
@@ -40,6 +40,6 @@ h1 {
   /* width: 100%; */
   padding: 20px;
 }
-button {
+.Go {
   padding: 10px;
 }
