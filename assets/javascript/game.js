@@ -31,8 +31,8 @@ var score = 0;
 
 // Functions
 function letterChecker(letrs, playerGuess) {
-  var currentWord = letrs;
-  console.log('This is the current word: ' + currentWord);
+  // var currentWord = letrs;
+  // console.log('This is the current word: ' + currentWord);
   var wordArr = letrs.split("");
   console.log('The current word as an array: ' + wordArr);
   //
@@ -67,9 +67,7 @@ function reset() {
 }
 
 $(document).ready(function(){
-  $("button").click(function(){
-      $("p").text("Hello world!");
-  });
+  updateMe();
 });
 
 function updateMe() {
