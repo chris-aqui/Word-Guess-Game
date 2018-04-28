@@ -25,21 +25,26 @@ var computerGuess = charactersList[Math.floor(Math.random() * charactersList.len
 var conputerGuessName = computerGuess.name.toLowerCase();
 var conputerGuessImage = computerGuess.image;
 var conputerGuessHint = computerGuess.hint;
+var livesLeft = 10;
+var score = 0;
 // End of variable
 
 // Functions
 function letterChecker(letrs, playerGuess) {
-  // split word into array of individual letters, store in wordArr
   var currentWord = letrs;
   console.log('This is the current word: ' + currentWord);
   var wordArr = letrs.split("");
   console.log('The current word as an array: ' + wordArr);
   //
-  for (var i= 0; i < wordArr.length; i++) {
+  for (var i = 0; i < wordArr.length; i++) {
     console.log(element);
     var element = wordArr[i];
-    if(playerGuess === element){
+    if (playerGuess === element) {
+      score++;
       console.log('test');
+      break
+    } else {
+      console.log('Wrong, try again');
     }
   }
 }
@@ -50,6 +55,7 @@ document.onkeyup = function (event) {
   var userEnter = event.key.toLowerCase();
   console.log('User pressed: ' + userEnter);
   letterChecker(conputerGuessName, userEnter);
+  updateMe();
 }
 
 function reset() {
@@ -60,6 +66,16 @@ function reset() {
 
 }
 
+$(document).ready(function(){
+  $("button").click(function(){
+      $("p").text("Hello world!");
+  });
+});
+
+function updateMe() {
+  $("#hint").text(conputerGuessHint);
+  $("#score").text(score);
+}
 //
 // Press any key to get started!
 // Wins: (# of times user guessed the word correctly).
