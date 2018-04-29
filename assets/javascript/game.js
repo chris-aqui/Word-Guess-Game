@@ -27,29 +27,33 @@ var conputerGuessImage = computerGuess.image;
 var conputerGuessHint = computerGuess.hint;
 var livesLeft = 10;
 var score = 0;
+var guessesMade = [];
+var blankSpaces;
 // End of variable
 
 // Functions
-function letterChecker(letrs, playerGuess) {
+function letterChecker(answer, playerGuess) {
   // var currentWord = letrs;
   // console.log('This is the current word: ' + currentWord);
-  var wordArr = letrs.split("");
+  var wordArr = answer.split("");
   console.log('The current word as an array: ' + wordArr);
   //
   for (var i = 0; i < wordArr.length; i++) {
     console.log(element);
     var element = wordArr[i];
+    //
+    var letterIndex = wordArr.indexOf(playerGuess);
+    console.log('player guess index: ' + letterIndex);
     if (playerGuess === element) {
-      score++;
+      // score++;
       console.log('test');
-      break
+      // break
     } else {
+      guessesMade.push(playerGuess);
       console.log('Wrong, try again');
     }
   }
 }
-
-
 //
 document.onkeyup = function (event) {
   var userEnter = event.key.toLowerCase();
@@ -57,16 +61,31 @@ document.onkeyup = function (event) {
   letterChecker(conputerGuessName, userEnter);
   updateMe();
 }
-
+//
+function blank(x){
+  blankSpaces = [];
+  for (var i = 0; i < x.length; i++) {
+    // - parse the word into blanks
+    if (x[i] === " ") {
+      blankSpaces.push(" ");
+    } else {
+      blankSpaces.push("_");
+    }
+  }
+  var testt = blankSpaces.join("\xa0");
+  $("#userGues").text(testt);
+  // \xa0 is a Unicode no-break space
+}
+//
 function reset() {
   computerGuess = charactersList[Math.floor(Math.random() * charactersList.length)];
   conputerGuessName = computerGuess.name.toLowerCase();
   conputerGuessImage = computerGuess.image;
   conputerGuessHint = computerGuess.hint;
-
 }
-
+//
 $(document).ready(function(){
+  blank(conputerGuessName);
   updateMe();
 });
 
@@ -74,6 +93,9 @@ function updateMe() {
   $("#hint").text(conputerGuessHint);
   $("#score").text(score);
 }
+
+
+
 //
 // Press any key to get started!
 // Wins: (# of times user guessed the word correctly).
