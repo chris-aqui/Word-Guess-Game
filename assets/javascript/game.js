@@ -39,14 +39,15 @@ function letterChecker(answer, playerGuess) {
   console.log('The current word as an array: ' + wordArr);
   //
   for (var i = 0; i < wordArr.length; i++) {
-    console.log(element);
+    // console.log(element);
     var element = wordArr[i];
     //
     var letterIndex = wordArr.indexOf(playerGuess);
     console.log('player guess index: ' + letterIndex);
+    //
     if (playerGuess === element) {
       // score++;
-      console.log('test');
+      console.log('You got one, keep going');
       // break
     } else {
       guessesMade.push(playerGuess);
