@@ -38,6 +38,7 @@ function letterChecker(answer, playerGuess) {
   var wordArr = answer.split("");
   console.log('The current word as an array: ' + wordArr);
   //
+  guessesMade.push(playerGuess);
   for (var i = 0; i < wordArr.length; i++) {
     // console.log(element);
     var element = wordArr[i];
@@ -50,7 +51,6 @@ function letterChecker(answer, playerGuess) {
       console.log('You got one, keep going');
       // break
     } else {
-      guessesMade.push(playerGuess);
       console.log('Wrong, try again');
     }
   }
@@ -93,6 +93,7 @@ $(document).ready(function(){
 function updateMe() {
   $("#hint").text(conputerGuessHint);
   $("#score").text(score);
+  $("#guess").text(guessesMade);
 }
 
 
