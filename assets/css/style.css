@@ -1,5 +1,5 @@
 html {
-  font-size: 16px;
+  font-size: 18px;
   background-image: url("../images/ToyStory-wallpaper.jpg");
   height: 100%;
   background-repeat: no-repeat;
@@ -42,4 +42,8 @@ h1 {
 }
 .Go {
   padding: 10px;
+}
+p {
+  font-weight: 600;
+  /* line-height: 20px; */
 }
