@@ -47,25 +47,27 @@ function letterChecker(answer, playerGuess) {
     if (playerGuess === element) {
       blankSpaces[i] = element;
       $("#userGues").text(blankSpaces.join("\xa0"));
-      console.log("show blankspace " + blankSpaces[i]);
+      console.log("show blankspace " + blankSpaces);
       // score++;
       console.log('You got one, keep going');
       break
-    } else {
+    } else if(playerGuess != element) {
       console.log('Wrong, try again');
       livesLeft--;
       // break
       if (livesLeft === 0) {
         livesLeft = 0;
         // lose++;
-        reset();
         alert("you lose!");
+        reset();
       }
     }
-    if(blankSpaces.length === answer.length){
-      score++;
-      console.log("this is the answer: " + blankSpaces);
-    }
+  }
+      if(blankSpaces.length === wordArr.length ){ // for some reason this is alway true...
+            score++;
+            console.log(score);
+            // alert("you lose!");
+            console.log("this is the answer: " + blankSpaces);
   }
 }
 //
