@@ -56,10 +56,15 @@ function letterChecker(answer, playerGuess) {
       livesLeft--;
       // break
       if (livesLeft === 0) {
+        livesLeft = 0;
         // lose++;
-        alert("you lose!");
         reset();
+        alert("you lose!");
       }
+    }
+    if(blankSpaces.length === answer.length){
+      score++;
+      console.log("this is the answer: " + blankSpaces);
     }
   }
 }
@@ -91,6 +96,11 @@ function reset() {
   conputerGuessName = computerGuess.name.toLowerCase();
   conputerGuessImage = computerGuess.image;
   conputerGuessHint = computerGuess.hint;
+  livesLeft = 10;
+  guessesMade = [];
+  blankSpaces = [];
+  updateMe();
+  // blank(conputerGuessName);
 }
 //
 $(document).ready(function () {
