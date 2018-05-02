@@ -35,28 +35,35 @@ var blankSpaces = [];
 
 // Functions
 function letterChecker(answer, playerGuess) {
+  // split my word into an array of letters
   var wordArr = answer.split("");
   console.log('The current word as an array: ' + wordArr);
+  // push the user guess into the guesses made array
   guessesMade.push(playerGuess);
 
+  // loop over the word for each letter of the word array
   for (var i = 0; i < wordArr.length; i++) {
+    // sets the index of the word array to an element for easy readng
     var element = wordArr[i];
+    // checks the user guess for the word array index
     var letterIndex = wordArr.indexOf(playerGuess);
     console.log('player guess index: ' + letterIndex);
-    //
+    // checks to see if the user value is present in the word array on each index
     if (playerGuess === element) {
+      console.log('we are checking ' + element);
       blankSpaces[i] = element;
       $("#userGues").text(blankSpaces.join("\xa0"));
       console.log("show blankspace " + blankSpaces);
       // score++;
       console.log('You got one, keep going');
-      break
+      // break
     } else if(playerGuess != element) {
       console.log('Wrong, try again');
       livesLeft--;
       // break
       if (livesLeft === 0) {
         livesLeft = 0;
+        element = 0;
         // lose++;
         alert("you lose!");
         reset();
