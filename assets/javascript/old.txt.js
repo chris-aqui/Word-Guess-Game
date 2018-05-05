@@ -26,36 +26,38 @@ function letterChecker(answer, playerGuess) {
     isWin = false;
   }
   // loop over the word for each letter of the word array
+  // wordArr.map(function checker(playerGuess){
+
+  // })
+//
+
   for (var i = 0; i < wordArr.length; i++) {
     if (playerGuess === wordArr[i]) {
-      // if (wordArr.includes(playerGuess)) {
       guessesMade.push(playerGuess);
       blankSpaces[i] = playerGuess;
       $("#userGues").text(blankSpaces.join(" "));
       lettersLeft--;
       console.log(lettersLeft);
-      console.log(wordArr + ' ----- ' + blankSpaces)
+      console.log(wordArr + ' ----- ' + blankSpaces);
       if (lettersLeft === 0) {
         console.log('you win');
         score++;
-        var youWinDiv = document.createElement("div")
+        var youWinDiv = document.createElement("div");
         youWinDiv.innerHTML = `You Win! Your score is ${score}. Press X to start again.`;
         $('#userGues').append(youWinDiv);
         return isWin = true;
-      }
-    } else if (playerGuess != wordArr[i]) {
-      console.log('player guessed ' + playerGuess);
-      console.log('word at that index ' + wordArr[i]);
-
-      var filteredGuesses = wordArr.filter( guess => guess === playerGuess);
-      console.log('filteredGuesses is ' + filteredGuesses.length);
+    } else if (playerGuess !== wordArr[i]) {
+      var filteredGuesses = guessesMade.filter( guess => guess === playerGuess);
       if (filteredGuesses.length === 0) {
         console.log('life lost');
-        guessesMade.push(playerGuess);
+        // guessesMade.push(playerGuess);
         livesLeft--;
       }
-
     }
+  }
+  }
+
+    // last session
 
     // // sets the index of the word array to an element for easy readng
     // var element = wordArr[i];
@@ -84,14 +86,14 @@ function letterChecker(answer, playerGuess) {
     //     reset();
     //   }
     // }
-  }
+  // }
       // if(blankSpaces === wordArr){ // for some reason this is alway true...
       //       score++;
       //       console.log(score);
       //       alert("You Won!!");
       //       console.log("this is the answer: " + blankSpaces);
   // }
-}
+// }
 //
 document.onkeyup = function (event) {
   var userEnter = event.key.toLowerCase();
@@ -128,12 +130,13 @@ function reset() {
 }
 //
 $(document).ready(function () {
+  // reset();
   blank(computerGuess.name);
   updateMe();
 });
 
 function updateMe() {
-  $('#userGues').text(blankSpaces.join(" "))
+  $('#userGues').text(blankSpaces.join(" "));
   $("#hint").text(conputerGuessHint);
   $("#score").text(score);
   $("#guess").text(guessesMade);
