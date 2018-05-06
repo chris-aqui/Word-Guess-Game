@@ -44,6 +44,7 @@ function letterChecker(answer, playerGuess) {
         return isWin = true;
       }
     } else if (playerGuess != wordArr[i]) {
+      // make a way to checks if the wrong letter is already in the guesses made array
       console.log('player guessed ' + playerGuess);
       console.log('word at that index ' + wordArr[i]);
 
